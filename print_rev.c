@@ -1,11 +1,10 @@
 #include "main.h"
 
 /**
- * print_rev - print string in reverse
- * @str: string pointer
- * Return: coounter
+ *print_rev - print string in reverse
+ *@str: string pointer
+ *Return: counter
  */
-
 int print_rev(char *str)
 {
 	char *z = str;
@@ -20,11 +19,9 @@ int print_rev(char *str)
 	}
 
 	i = count1 - 1;
-	while (i >=  0)
+	while (i >= 0)
 	{
 		_putchar(*(z + i));
 		i--;
-		count++;
 	}
-	return (count);
 }
