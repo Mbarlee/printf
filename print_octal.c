@@ -13,7 +13,7 @@ int print_octal(unsigned int n)
 
 	b  = n;
 	c = 1;
-	for (a= 1 ; b > 7 ; a++)
+	for (a = 1 ; b > 7 ; a++)
 	{
 		b = b / 8;
 		c = c * 8;
