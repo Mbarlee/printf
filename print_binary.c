@@ -5,35 +5,23 @@
 * @list: List of arguments passed to this function
 * Return: The length of the number printed
 */
-int print_binary(va_list list)
+
+int print_binary(int number)
 {
-unsigned int num;
-int i, len;
-char *str;
-char *rev_str;
-num = va_arg(list, unsigned int);
-if (num == 0)
-return (_putchar('0'));
-if (num < 1)
-return (-1);
-len = base_len(num, 2);
-str = malloc(sizeof(char) * len + 1);
-if (str == NULL)
-return (-1);
-for (i = 0; num > 0; i++)
-{
-if (num % 2 == 0)
-str[i] = '0';
-else
-str[i] = '1';
-num = num / 2;
-}
-str[i] = '\0';
-rev_str = rev_string(str);
-if (rev_str == NULL)
-return (-1);
-write_base(rev_str);
-free(str);
-free(rev_str);
-return (len);
+	int arr[32], i = 0, count = 0;
+
+	while (number >= 2)
+	{
+		arr[i] = number%2;
+		number /= 2;
+		i++;
+	}
+	arr[i] = number;
+
+	for (i; i >= 0; i--)
+	{
+		count += _putchar(arr[i] + '0');
+	}
+
+	return (count);
 }
